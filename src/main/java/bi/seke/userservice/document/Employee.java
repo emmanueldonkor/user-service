@@ -1,19 +1,13 @@
 package bi.seke.userservice.document;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@EqualsAndHashCode(callSuper = true)
 @Document(collection = "employees")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-public class Employee {
-  @Id
-  private String uid;
-  private String email;
-  private String phone;
-  private Principal principle;
+public class Employee extends Principal {
 }
